@@ -160,15 +160,7 @@
       0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
       50% { transform: translate(-50%, -50%) translateY(-7px); }
     }
-@media (max-width: 720px) {
-  .scene {
-    aspect-ratio: auto;      
-    min-height: 100vh;
-    height: 100dvh;          
 
-    background-position: center top; 
-  }
-}
       .title-wrap {
         top: 3.5%;
         width: 94%;
@@ -188,9 +180,12 @@
 
 @media (max-width: 720px) {
   .scene {
-    aspect-ratio: 9 / 16;
-    background:
-           url('seoul_mobile.png') center/cover no-repeat;
+    aspect-ratio: auto;
+    min-height: 100vh;
+    height: 100dvh;
+
+    background: url('seoul_mobile.png') center/cover no-repeat;
+    background-position: center top;
   }
 }
 
