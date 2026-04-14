@@ -41,7 +41,7 @@
     .title-wrap {
       position: absolute;
       left: 50%;
-      top: 4.5%;
+      top: 2%;
       transform: translateX(-50%);
       text-align: center;
       width: min(92%, 900px);
@@ -49,7 +49,7 @@
       text-shadow: 0 2px 18px rgba(0,0,0,.45);
     }
     .kicker {
-      font-size: clamp(11px, 1.2vw, 16px);
+      font-size: clamp(9px, 1.2vw, 12px);
       letter-spacing: .22em;
       text-transform: uppercase;
       opacity: .9;
@@ -135,6 +135,21 @@
       color: #dce9ff;
       backdrop-filter: blur(6px);
     }
+
+.footer-count {
+      position: absolute;
+      left: 50%;
+      bottom: 14px;
+      transform: translateX(-50%);
+      z-index: 3;
+      padding: 8px 14px;
+      border-radius: 999px;
+               font-size: clamp(10px, 1vw, 13px);
+    
+         }
+
+
+
     @keyframes twinkle {
       0%, 100% { transform: scale(1); opacity: .75; }
       50% { transform: scale(1.45); opacity: 1; }
@@ -188,6 +203,82 @@
   }
 }
 
+@media (max-width: 720px) {
+  .countdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 150px;
+    margin: 0 auto;
+  }
+
+  .countdown div {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    padding: 6px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .countdown span {
+    font-size: 18px;
+  }
+
+  .countdown small {
+    font-size: 9px;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 720px) {
+  .countdown {
+    transform: translateY(13px);
+  }
+}
+.countdown {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    z-index: 5;
+    position: relative;
+  }
+
+  .countdown div {
+    min-width: 55px;
+    padding: 6px 8px;
+    border-radius: 14px;
+    background: rgba(7, 16, 34, 0.45);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  }
+
+  .countdown span {
+    display: block;
+    font-size: 20px;  
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+  }
+
+  .countdown small {
+    display: block;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #d8e8ff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
 
   </style>
 </head>
@@ -196,9 +287,17 @@
     <div class="overlay"></div>
 
     <section class="title-wrap">
-      <div class="kicker">Proyecto de cumpleaños</div>
-      <h2>Publicidad en Seúl 🇰🇷</h2>
-     
+           <h2>Proyecto de cumpleaños</h2>
+ <div class="kicker">Cierre de la Recaudación</div>
+
+     <div id="countdown" class="countdown">
+  <div><span id="days">00</span><small>días</small></div>
+  <div><span id="hours">00</span><small>horas</small></div>
+  <div><span id="minutes">00</span><small>min</small></div>
+  <div><span id="seconds">00</span><small>seg</small></div>
+</div>
+
+
     </section>
 
     
@@ -221,9 +320,9 @@
 <div class="star" style="left:14.6%; top:18.1%; --s:9px; --d:2.6s; --t:4.2s;"><span class="spark"></span><span class="name">Luzia P. 🇧🇷</span></div>
 <div class="star" style="left:23.5%; top:32.1%; --s:11px; --d:0.2s; --t:4.0s;"><span class="spark"></span><span class="name">Lidia 🇦🇷</span></div>
 <div class="star" style="left:30.3%; top:68.8%; --s:12px; --d:1.2s; --t:4.0s;"><span class="spark"></span><span class="name">Macka 🇨🇱</span></div>
-<div class="star" style="left:30.9%; top:28.3%; --s:9px; --d:2.9s; --t:4.6s;"><span class="spark"></span><span class="name">Alessita 🇲🇽</span></div>
+<div class="star" style="left:28.9%; top:27.3%; --s:9px; --d:2.9s; --t:4.6s;"><span class="spark"></span><span class="name">Alessita 🇲🇽</span></div>
 <div class="star" style="left:17.4%; top:36.8%; --s:12px; --d:2.2s; --t:4.0s;"><span class="spark"></span><span class="name">Liliana 🇲🇽</span></div>
-<div class="star" style="left:68.9%; top:24.4%; --s:9px; --d:0.3s; --t:4.4s;"><span class="spark"></span><span class="name">Lupita Z. 🇲🇽</span></div>
+<div class="star" style="left:71.9%; top:24.4%; --s:9px; --d:0.3s; --t:4.4s;"><span class="spark"></span><span class="name">Lupita Z. 🇲🇽</span></div>
 <div class="star" style="left:74.0%; top:54.3%; --s:10px; --d:1.3s; --t:4.8s;"><span class="spark"></span><span class="name">Lau R 🇲🇽</span></div>
 <div class="star" style="left:76.0%; top:30.9%; --s:12px; --d:1.3s; --t:4.2s;"><span class="spark"></span><span class="name">Adulfa 🇲🇽</span></div>
 <div class="star" style="left:15.6%; top:60.3%; --s:11px; --d:1.1s; --t:4.2s;"><span class="spark"></span><span class="name">Marcela R. 🇲🇽</span></div>
@@ -267,6 +366,34 @@
 
 
     <div class="footer-note">Kim Seon Ho Fan Club Latinoamérica</div>
+
+
+
+<script>
+  function updateCountdown() {
+    const target = new Date("2026-04-25T00:00:00");
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown").innerHTML = "<div><span>00</span><small>¡Llegó el día!</small></div>";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
   </main>
 </body>
 </html>
