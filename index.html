@@ -52,6 +52,7 @@
     .kicker {
       font-size: clamp(9px, 1.2vw, 12px);
       letter-spacing: .22em;
+		
       text-transform: uppercase;
       opacity: .9;
       margin-bottom: 8px;
@@ -159,13 +160,15 @@
       0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
       50% { transform: translate(-50%, -50%) translateY(-7px); }
     }
-    .scene {
+@media (max-width: 720px) {
+  .scene {
     aspect-ratio: auto;      
     min-height: 100vh;
-    height: 100dvh;           
+    height: 100dvh;          
 
-    background-position: center top; /
+    background-position: center top; 
   }
+}
       .title-wrap {
         top: 3.5%;
         width: 94%;
