@@ -19,18 +19,17 @@
       justify-content: center;
       padding: 16px;
     }
-.scene {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  height: 100dvh;  
-
-  overflow: hidden;
-  border-radius: 0;
-  box-shadow: none;
-
-  background: url('seoul_night_random_bg.png') center/cover no-repeat;
-}
+    .scene {
+      position: relative;
+      width: min(1400px, 100%);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      background:
+       
+        url('seoul_night_random_bg.png') center/cover no-repeat;
+    }
     .overlay {
       position: absolute;
       inset: 0;
@@ -52,7 +51,6 @@
     .kicker {
       font-size: clamp(9px, 1.2vw, 12px);
       letter-spacing: .22em;
-		
       text-transform: uppercase;
       opacity: .9;
       margin-bottom: 8px;
@@ -160,7 +158,11 @@
       0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
       50% { transform: translate(-50%, -50%) translateY(-7px); }
     }
-
+    @media (max-width: 720px) {
+      .scene {
+        aspect-ratio: 9 / 16;
+        background-position: center center;
+      }
       .title-wrap {
         top: 3.5%;
         width: 94%;
@@ -180,9 +182,9 @@
 
 @media (max-width: 720px) {
   .scene {
-    background-image: url('seoul_mobile.png') !important;
-    background-size: cover;
-    background-position: center top;
+    aspect-ratio: 9 / 16;
+    background:
+           url('seoul_mobile.png') center/cover no-repeat;
   }
 }
 
@@ -236,8 +238,7 @@
 
 @media (max-width: 720px) {
   .countdown {
-    transform: translateY(-25px) scale(0.75);
-    transform-origin: center;
+    transform: translateY(13px);
   }
 }
 .countdown {
