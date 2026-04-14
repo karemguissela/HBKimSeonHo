@@ -147,7 +147,21 @@
     
          }
 
+@media (min-width: 721px) {
+  .countdown {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
 
+  .countdown span {
+    font-size: clamp(14px, 2vw, 18px);
+  }
+
+  .countdown div {
+    min-width: 45px;
+    padding: 4px 6px;
+  }
+}
 
     @keyframes twinkle {
       0%, 100% { transform: scale(1); opacity: .75; }
