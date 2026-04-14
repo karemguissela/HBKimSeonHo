@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kim Seon Ho Birthday Project</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      background: #070d18;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .scene {
+      position: relative;
+      width: min(1400px, 100%);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      background:
+       
+        url('seoul_night_random_bg.png') center/cover no-repeat;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,255,255,.03), transparent 35%),
+        linear-gradient(to top, rgba(3,6,12,.65), transparent 28%);
+      pointer-events: none;
+    }
+    .title-wrap {
+      position: absolute;
+      left: 50%;
+      top: 4.5%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: min(92%, 900px);
+      z-index: 3;
+      text-shadow: 0 2px 18px rgba(0,0,0,.45);
+    }
+    .kicker {
+      font-size: clamp(11px, 1.2vw, 16px);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      opacity: .9;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 54px);
+      line-height: 1.05;
+    }
+    .subtitle {
+      margin-top: 10px;
+      font-size: clamp(12px, 1.45vw, 19px);
+      color: #d8e8ff;
+      opacity: .95;
+    }
+    .billboard-label {
+      position: absolute;
+      left: 50%;
+      top: 39%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      width: min(42vw, 300px);
+      padding: 12px 16px;
+      color: #10223f;
+      font-weight: 700;
+      font-size: clamp(14px, 1.4vw, 20px);
+    }
+    .billboard-label small {
+      display: block;
+      margin-top: 6px;
+      font-weight: 500;
+      color: #4d6391;
+      font-size: .8em;
+    }
+    .star {
+      position: absolute;
+      z-index: 3;
+      transform: translate(-50%, -50%);
+      animation: drift 8s ease-in-out infinite;
+      animation-delay: var(--d);
+      pointer-events: none;
+    }
+    .spark {
+      width: var(--s);
+      height: var(--s);
+      display: block;
+      margin: 0 auto 6px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(255,255,255,1) 0 28%, rgba(170,220,255,.95) 32%, rgba(170,220,255,.28) 58%, rgba(170,220,255,0) 74%);
+      box-shadow:
+        0 0 10px rgba(255,255,255,.95),
+        0 0 22px rgba(120,190,255,.65),
+        0 0 36px rgba(120,190,255,.25);
+      animation: twinkle var(--t) ease-in-out infinite;
+      animation-delay: var(--d);
+    }
+    .name {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: clamp(9px, .95vw, 13px);
+      white-space: nowrap;
+      background: rgba(7, 16, 34, .38);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      text-shadow: 0 1px 8px rgba(0,0,0,.35);
+    }
+    .footer-note {
+      position: absolute;
+      left: 50%;
+      bottom: 14px;
+      transform: translateX(-50%);
+      z-index: 3;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(7, 14, 28, .45);
+      border: 1px solid rgba(255,255,255,.1);
+      font-size: clamp(10px, 1vw, 13px);
+      color: #dce9ff;
+      backdrop-filter: blur(6px);
+    }
+    @keyframes twinkle {
+      0%, 100% { transform: scale(1); opacity: .75; }
+      50% { transform: scale(1.45); opacity: 1; }
+    }
+    @keyframes drift {
+      0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+      50% { transform: translate(-50%, -50%) translateY(-7px); }
+    }
+    @media (max-width: 720px) {
+      .scene {
+        aspect-ratio: 9 / 16;
+        background-position: center center;
+      }
+      .title-wrap {
+        top: 3.5%;
+        width: 94%;
+      }
+      .billboard-label {
+        top: 33%;
+        width: 56vw;
+        max-width: 250px;
+      }
+      .footer-note {
+        bottom: 10px;
+        width: calc(100% - 20px);
+        text-align: center;
+        border-radius: 16px;
+      }
+    }
+
+@media (max-width: 720px) {
+  .scene {
+    aspect-ratio: 9 / 16;
+    background:
+           url('seoul_mobile.png') center/cover no-repeat;
+  }
+}
+
+@media (max-width: 720px) {
+  .star {
+    transform: translate(-50%, -50%) translateY(-18%);
+  }
+
+  .name {
+    font-size: 10px;
+  }
+
+  .spark {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <main class="scene">
+    <div class="overlay"></div>
+
+    <section class="title-wrap">
+      <div class="kicker">Proyecto de cumpleaños</div>
+      <h2>Publicidad en Seúl 🇰🇷</h2>
+     
+    </section>
+
+    
+<div class="star" style="left:5.0%; top:45.7%; --s:11px; --d:0.5s; --t:4.2s;"><span class="spark"></span><span class="name">NoeH 🇦🇷</span></div>
+<div class="star" style="left:5.1%; top:51.5%; --s:12px; --d:2.0s; --t:4.8s;"><span class="spark"></span><span class="name">Gaby 🇦🇷</span></div>
+<div class="star" style="left:76.4%; top:41.8%; --s:10px; --d:1.5s; --t:4.1s;"><span class="spark"></span><span class="name">Ale 🇨🇱</span></div>
+<div class="star" style="left:87.3%; top:30.3%; --s:12px; --d:0.6s; --t:5.2s;"><span class="spark"></span><span class="name">Karen 🇨🇱</span></div>
+<div class="star" style="left:9.0%; top:12.4%; --s:9px; --d:0.6s; --t:5.0s;"><span class="spark"></span><span class="name">Paloma 🇵🇪</span></div>
+<div class="star" style="left:94.2%; top:16.4%; --s:10px; --d:2.0s; --t:4.4s;"><span class="spark"></span><span class="name">Debora 🇨🇷</span></div>
+<div class="star" style="left:94.8%; top:51.1%; --s:12px; --d:1.9s; --t:4.4s;"><span class="spark"></span><span class="name">Vero 🇪🇨</span></div>
+<div class="star" style="left:81.6%; top:35.9%; --s:11px; --d:0.8s; --t:4.4s;"><span class="spark"></span><span class="name">Vani 🇦🇷</span></div>
+<div class="star" style="left:23.3%; top:55.5%; --s:10px; --d:2.2s; --t:4.2s;"><span class="spark"></span><span class="name">Mary 🇨🇱</span></div>
+<div class="star" style="left:95.2%; top:62.0%; --s:10px; --d:2.3s; --t:4.1s;"><span class="spark"></span><span class="name">Niko 🇨🇱</span></div>
+<div class="star" style="left:90.9%; top:40.6%; --s:11px; --d:1.5s; --t:3.9s;"><span class="spark"></span><span class="name">Sinthia 🇵🇾</span></div>
+<div class="star" style="left:12.4%; top:42.1%; --s:9px; --d:2.1s; --t:4.6s;"><span class="spark"></span><span class="name">Cecy 🇨🇱</span></div>
+<div class="star" style="left:82.4%; top:68.0%; --s:9px; --d:1.5s; --t:4.5s;"><span class="spark"></span><span class="name">Anna Paula 🇧🇷</span></div>
+<div class="star" style="left:82.2%; top:62.2%; --s:12px; --d:0.7s; --t:5.0s;"><span class="spark"></span><span class="name">Fabrícia 🇧🇷</span></div>
+<div class="star" style="left:74.0%; top:47.1%; --s:11px; --d:2.2s; --t:4.6s;"><span class="spark"></span><span class="name">Roberta 🇧🇷</span></div>
+<div class="star" style="left:23.9%; top:43.8%; --s:9px; --d:2.0s; --t:4.2s;"><span class="spark"></span><span class="name">Liriane G. 🇧🇷</span></div>
+<div class="star" style="left:14.6%; top:18.1%; --s:9px; --d:2.6s; --t:4.2s;"><span class="spark"></span><span class="name">Luzia P. 🇧🇷</span></div>
+<div class="star" style="left:23.5%; top:32.1%; --s:11px; --d:0.2s; --t:4.0s;"><span class="spark"></span><span class="name">Lidia 🇦🇷</span></div>
+<div class="star" style="left:30.3%; top:68.8%; --s:12px; --d:1.2s; --t:4.0s;"><span class="spark"></span><span class="name">Macka 🇨🇱</span></div>
+<div class="star" style="left:30.9%; top:28.3%; --s:9px; --d:2.9s; --t:4.6s;"><span class="spark"></span><span class="name">Alessita 🇲🇽</span></div>
+<div class="star" style="left:17.4%; top:36.8%; --s:12px; --d:2.2s; --t:4.0s;"><span class="spark"></span><span class="name">Liliana 🇲🇽</span></div>
+<div class="star" style="left:68.9%; top:24.4%; --s:9px; --d:0.3s; --t:4.4s;"><span class="spark"></span><span class="name">Lupita Z. 🇲🇽</span></div>
+<div class="star" style="left:74.0%; top:54.3%; --s:10px; --d:1.3s; --t:4.8s;"><span class="spark"></span><span class="name">Lau R 🇲🇽</span></div>
+<div class="star" style="left:76.0%; top:30.9%; --s:12px; --d:1.3s; --t:4.2s;"><span class="spark"></span><span class="name">Adulfa 🇲🇽</span></div>
+<div class="star" style="left:15.6%; top:60.3%; --s:11px; --d:1.1s; --t:4.2s;"><span class="spark"></span><span class="name">Marcela R. 🇲🇽</span></div>
+<div class="star" style="left:18.8%; top:49.9%; --s:10px; --d:2.3s; --t:4.6s;"><span class="spark"></span><span class="name">Vero A. 🇦🇷</span></div>
+<div class="star" style="left:5.0%; top:33.5%; --s:9px; --d:2.1s; --t:4.3s;"><span class="spark"></span><span class="name">Fátima 🇦🇷</span></div>
+<div class="star" style="left:86.9%; top:46.0%; --s:10px; --d:2.4s; --t:3.9s;"><span class="spark"></span><span class="name">Elisa 🇵🇪</span></div>
+<div class="star" style="left:13.8%; top:76.2%; --s:9px; --d:0.4s; --t:4.6s;"><span class="spark"></span><span class="name">Gabriela 🇵🇪</span></div>
+<div class="star" style="left:72.6%; top:37.0%; --s:9px; --d:2.0s; --t:5.1s;"><span class="spark"></span><span class="name">Bet 🇵🇪</span></div>
+<div class="star" style="left:87.0%; top:55.7%; --s:11px; --d:0.7s; --t:3.9s;"><span class="spark"></span><span class="name">Evelyn 🇵🇪</span></div>
+<div class="star" style="left:7.8%; top:71.2%; --s:11px; --d:0.7s; --t:3.9s;"><span class="spark"></span><span class="name">Lissi 🇵🇪</span></div>
+<div class="star" style="left:23.3%; top:22.1%; --s:12px; --d:0.5s; --t:4.6s;"><span class="spark"></span><span class="name">Vane 🇭🇳</span></div>
+<div class="star" style="left:67.7%; top:69.8%; --s:9px; --d:1.2s; --t:5.0s;"><span class="spark"></span><span class="name">Noemi H. 🇪🇸</span></div>
+<div class="star" style="left:20.5%; top:66.3%; --s:12px; --d:1.5s; --t:4.4s;"><span class="spark"></span><span class="name">Gis 🇵🇪</span></div>
+
+<!--
+
+<div class="star" style="left:8.2%; top:7.2%; --s:12px; --d:0.5s; --t:4.5s;"><span class="spark"></span><span class="name">Jo</span></div>
+<div class="star" style="left:5.1%; top:16.8%; --s:9px; --d:1.5s; --t:5.1s;"><span class="spark"></span><span class="name">Leni</span></div>
+<div class="star" style="left:29.5%; top:18.1%; --s:10px; --d:0.4s; --t:4.1s;"><span class="spark"></span><span class="name">Katy</span></div>
+<div class="star" style="left:89.7%; top:23.4%; --s:11px; --d:1.7s; --t:4.4s;"><span class="spark"></span><span class="name">Lizy</span></div>
+<div class="star" style="left:8.0%; top:58.0%; --s:12px; --d:2.4s; --t:3.8s;"><span class="spark"></span><span class="name">Gre</span></div>
+<div class="star" style="left:79.3%; top:15.9%; --s:10px; --d:2.0s; --t:4.5s;"><span class="spark"></span><span class="name">Eli</span></div>
+<div class="star" style="left:72.2%; top:18.8%; --s:9px; --d:1.9s; --t:4.8s;"><span class="spark"></span><span class="name">Elsa</span></div>
+<div class="star" style="left:15.4%; top:8.3%; --s:10px; --d:0.7s; --t:5.2s;"><span class="spark"></span><span class="name">Roxy</span></div>
+<div class="star" style="left:66.6%; top:15.0%; --s:10px; --d:2.1s; --t:5.2s;"><span class="spark"></span><span class="name">Bris</span></div>
+<div class="star" style="left:7.1%; top:24.6%; --s:12px; --d:1.9s; --t:4.3s;"><span class="spark"></span><span class="name">Abi</span></div>
+<div class="star" style="left:27.4%; top:61.7%; --s:10px; --d:2.4s; --t:4.3s;"><span class="spark"></span><span class="name">Eri</span></div>
+<div class="star" style="left:12.1%; top:27.6%; --s:10px; --d:1.3s; --t:4.1s;"><span class="spark"></span><span class="name">Belu</span></div>
+<div class="star" style="left:84.6%; top:9.4%; --s:12px; --d:0.6s; --t:5.1s;"><span class="spark"></span><span class="name">Gina</span></div>
+<div class="star" style="left:71.1%; top:62.8%; --s:12px; --d:1.4s; --t:4.9s;"><span class="spark"></span><span class="name">Mimi</span></div>
+<div class="star" style="left:5.6%; top:63.1%; --s:12px; --d:2.6s; --t:4.1s;"><span class="spark"></span><span class="name">Pame</span></div>
+<div class="star" style="left:94.1%; top:29.3%; --s:12px; --d:2.3s; --t:4.1s;"><span class="spark"></span><span class="name">Vane</span></div>
+<div class="star" style="left:78.0%; top:21.8%; --s:10px; --d:2.8s; --t:5.1s;"><span class="spark"></span><span class="name">Eva</span></div>
+<div class="star" style="left:24.4%; top:13.6%; --s:12px; --d:2.1s; --t:4.0s;"><span class="spark"></span><span class="name">Majo</span></div>
+<div class="star" style="left:93.1%; top:9.4%; --s:11px; --d:2.7s; --t:4.0s;"><span class="spark"></span><span class="name">Luna</span></div>
+<div class="star" style="left:36.6%; top:14.3%; --s:12px; --d:2.9s; --t:4.6s;"><span class="spark"></span><span class="name">Ceci</span></div>
+<div class="star" style="left:77.5%; top:76.2%; --s:9px; --d:0.6s; --t:4.2s;"><span class="spark"></span><span class="name">Mari</span></div>
+<div class="star" style="left:25.0%; top:73.6%; --s:10px; --d:1.2s; --t:4.6s;"><span class="spark"></span><span class="name">Lia2</span></div>
+	
+-->
+
+
+    <div class="footer-note">Kim Seon Ho Fan Club Latinoamérica</div>
+  </main>
+</body>
+</html>
